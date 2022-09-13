@@ -3,22 +3,22 @@ from bs4 import BeautifulSoup
 
 # List with urls
 list_of_doc_urls = []
-# For every page on a particular part
+# For every page on a particular session
 for page in range(1, 21):
     # Request page
-    # 3rd part -> range(1,19)
+    # C session -> range(1,19)
     # get_page = requests.get('https://www.hellenicparliament.gr/Praktika/Synedriaseis-Olomeleias?search=on'
     #                        '&SessionPeriod=d1e63fbc-9e29-4a80-9986-adb70123628e&pageNo='+str(page))
 
-    # 2nd part -> range(1,21)
+    # B session -> range(1,21)
     get_page = requests.get('https://www.hellenicparliament.gr/Praktika/Synedriaseis-Olomeleias?search=on'
                             '&SessionPeriod=5cf4f254-eee1-4264-9258-ac4b00b1ca69&pageNo='+str(page))
 
-    # 1rst part -> range(1, 23)
+    # A session -> range(1, 23)
     # get_page = requests.get('https://www.hellenicparliament.gr/Praktika/Synedriaseis-Olomeleias?search=on'
     #                        '&SessionPeriod=1d81f25b-0dfd-4649-8dab-aa8d00a81852&pageNo=1'+str(page))
 
-    # For every one of the ten html elements that contain links in the current page
+    # For every one of the ten html elements that contains links in the current page
     for i in range(1,11):
         get_page_soup = BeautifulSoup(get_page.text, 'html.parser')
         number = str(i)
