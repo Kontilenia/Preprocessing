@@ -1,6 +1,7 @@
 # Preprocessing
 Create dataset from Greek Parliament Records.
 
+The excecution order is:
 1) collect_url_documents.py 
 2) speech_files_extraction.py
 3) unprocessed_csv_extraction.py
